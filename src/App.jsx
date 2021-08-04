@@ -1,4 +1,6 @@
 import React from 'react';
+import "./app.css";
+import "./app.scss";
 
 class MyForm extends React.Component {
   constructor(props) {
@@ -61,7 +63,7 @@ class MyForm extends React.Component {
           onChange={this.myChangeHandler}
         />
         <br/>
-        {this.state.errormessage}
+        {Boolean(this.state.errormessage) && <p className="error">{this.state.errormessage}</p>}
         <br/>
         <p>About yourself:</p>
         <textarea value={this.state.about} />
